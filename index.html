@@ -151,6 +151,13 @@ footer .big{font-size:clamp(26px,5vw,44px);margin-bottom:14px}
 .vnav{display:flex;gap:10px;margin-top:12px}
 .tile .pl{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.22);backdrop-filter:blur(6px);display:grid;place-items:center;font-style:normal;font-size:24px;border:1px solid rgba(255,255,255,.45)}
 .vv{position:fixed;inset:0;z-index:80;background:#000;display:none;align-items:center;justify-content:center}.vv.on{display:flex}.vv video{max-width:100%;max-height:100%}.vv .lbx{z-index:2}
+.xw{padding-top:30px;padding-bottom:20px}.xw h2{font-size:clamp(32px,7vw,64px);margin-bottom:6px}.xw .t2{color:var(--mute);margin:0 0 20px}
+.xg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:700px){.xg{grid-template-columns:1fr}}
+.xc{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;text-align:left;isolation:isolate;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;transition:.3s}
+.xc:hover{transform:translateY(-6px);border-color:var(--gold)}
+.xc .xi{position:absolute;inset:0;background:#0D1B31 center/cover no-repeat;z-index:-2;transition:transform .6s}.xc:hover .xi{transform:scale(1.08)}
+.xc::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,.9),rgba(6,15,30,.1) 70%);z-index:-1}
+.xc b{font-size:22px}.xc span{color:#D5E0F2;font-size:15px}
 </style>
 </head>
 <body>
@@ -196,14 +203,24 @@ footer .big{font-size:clamp(26px,5vw,44px);margin-bottom:14px}
     <button class="bx" data-v="work"><svg class="ic"><use href="#i-crane"/></svg><div><h3>General contracting</h3><p>One team, start to finish.</p></div></button>
     <button class="bx w2" id="talk2"><svg class="ic"><use href="#i-chat"/></svg><div><h3>Have a plan? Wanna work on a particular budget? Let’s talk.</h3><p>Tap to call, message or email us.</p></div></button>
   </div></div>
-  <div class="wrap vsec">
-    <h2 class="big">See us at work</h2>
-    <p class="t2">Swipe to watch</p>
+    <div class="wrap xw">
+    <h2 class="big">Explore our work</h2>
+    <p class="t2">Built projects, drawings and videos. Tap one to open it.</p>
+    <div class="xg">
+      <button class="xc" data-go="built"><div class="xi"></div><b>Built projects</b><span></span></button>
+      <button class="xc" data-go="design"><div class="xi"></div><b>Designs &amp; drawings</b><span></span></button>
+      <button class="xc" data-go="video"><div class="xi"></div><b>Videos from site</b><span></span></button>
+    </div>
+  </div>
+<div class="wrap vsec">
+    <h2 class="big">Featured videos</h2>
+    <p class="t2">Swipe to watch. More videos are in Our work.</p>
     <div class="vs" id="vs">
       <div class="vc"><video id="sv1" playsinline controls preload="none"></video><b>Concrete works</b></div>
       <div class="vc"><video id="sv2" playsinline controls preload="none"></video><b>Slab pouring</b></div>
     </div>
     <div class="vnav"><button class="dbtn" id="vprev" aria-label="Previous video">←</button><button class="dbtn" id="vnext" aria-label="Next video">→</button></div>
+    <p style="margin-top:26px"><button class="go" data-v="work">See all our work <span>→</span></button></p>
   </div>
 </section>
 
@@ -350,6 +367,10 @@ function closeV(){var v=$("#vvp");v.pause();$("#vv").classList.remove("on")}
 $("#vvx").onclick=closeV;document.addEventListener("keydown",function(e){if(e.key==="Escape")closeV()});
 [1,2].forEach(function(i){var v=$("#sv"+i);v.poster=PS[i];setTimeout(function(){v.src=vurl(i)},400)});
 $("#vprev").onclick=function(){$("#vs").scrollBy({left:-300,behavior:"smooth"})};$("#vnext").onclick=function(){$("#vs").scrollBy({left:300,behavior:"smooth"})};
+
+(function(){var c=$$(".xc");var bg=[IMG[0],DS[0].c,PS[1]],tx=[P.length+" projects and site photos \u2192",DS.length+" sets of architectural drawings \u2192","Work-in-progress videos \u2192"];
+c.forEach(function(el,i){el.querySelector(".xi").style.backgroundImage='url("'+bg[i]+'")';el.querySelector("span").textContent=tx[i];
+el.onclick=function(){go("work");var k=el.dataset.go;$$(".sg")[k==="design"?1:0].click();if(k!=="design"){var ch=document.querySelector('.chip[data-f="'+(k==="video"?"site":"all")+'"]');if(ch)ch.click()}}})})();
 </script>
 </body>
 </html>
