@@ -219,6 +219,26 @@ footer .big{font-size:clamp(26px,5vw,44px);margin-bottom:14px}
 .hbl h2{font-size:clamp(28px,5.4vw,50px);margin-bottom:12px}.hbl p{color:#D4DEEF;margin:0 0 22px;max-width:44ch}
 .hmg{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hm{display:flex;align-items:center;gap:12px;padding:12px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.hm b{font-size:15px;line-height:1.25}
 @media(max-width:820px){.hbox{grid-template-columns:1fr;padding:34px 22px 24px}}@media(max-width:420px){.hmg{grid-template-columns:1fr}}
+.socl{margin:16px 0 8px;color:var(--mute);font-size:14px;font-weight:700}
+.soc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.soc{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;border-radius:18px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:14px;transition:.25s}
+.soc:hover{border-color:var(--gold);background:rgba(227,172,61,.08)}
+.soc i{width:52px;height:52px;border-radius:16px;display:grid;place-items:center}.soc svg{width:28px;height:28px}
+.soc.ig i{background:linear-gradient(45deg,#f9a03f,#e1306c 55%,#7b3fe4)}.soc.tt i{background:#000;box-shadow:inset 2px 2px 0 #25F4EE,inset -2px -2px 0 #FE2C55}.soc.gg i{background:#fff}
+.fsoc{display:flex;gap:10px;margin-top:14px}.fsoc .soc{padding:6px;border-radius:16px}.fsoc .soc i{width:44px;height:44px}
+.panel{max-height:92vh;overflow-y:auto}
+.sl-list{display:flex;flex-direction:column;gap:10px}
+.sl{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.03);text-decoration:none;transition:.25s}
+.sl:hover{border-color:var(--gold);transform:translateY(-2px);background:rgba(227,172,61,.08)}
+.sl i{flex:none;width:50px;height:50px;border-radius:16px;display:grid;place-items:center}.sl svg{width:28px;height:28px}
+.sl.ig i{background:linear-gradient(45deg,#f9a03f,#e1306c 55%,#7b3fe4)}.sl.tt i{background:#000;box-shadow:inset 2px 2px 0 #25F4EE,inset -2px -2px 0 #FE2C55}.sl.gg i{background:#fff}
+.sl-t{display:flex;flex-direction:column;min-width:0;flex:1}.sl-t b{font-size:17px}.sl-t small{color:var(--mute);font-size:14px;word-break:break-all}
+.sl-go{flex:none;font-style:normal;font-weight:800;font-size:13px;padding:8px 12px;border-radius:999px;background:var(--gold);color:#1a1200}
+.fsoc{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.fp{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:14px;transition:.25s}.fp:hover{border-color:var(--gold);background:rgba(227,172,61,.08)}
+.fp i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center}.fp svg{width:19px;height:19px}
+.fp.ig i{background:linear-gradient(45deg,#f9a03f,#e1306c 55%,#7b3fe4)}.fp.tt i{background:#000;box-shadow:inset 2px 2px 0 #25F4EE,inset -2px -2px 0 #FE2C55}.fp.gg i{background:#fff}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 96px);transform:translateX(-50%);background:#0D1B31;border:1px solid var(--gold);color:var(--ink);padding:12px 18px;border-radius:14px;z-index:90;max-width:88vw;font-weight:600;text-align:center}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Smilearc Engineering Limited","url":"https://smilearcengineeringlimited.github.io/","slogan":"Bringing your dream to perfected reality","telephone":"+2348161263631","email":"smilearcengineeringlimited@gmail.com","address":{"@type":"PostalAddress","streetAddress":"7, Powerline Street, Meiran","addressRegion":"Lagos State","addressCountry":"NG"}}</script>
 </head>
@@ -267,6 +287,9 @@ footer .big{font-size:clamp(26px,5vw,44px);margin-bottom:14px}
 <symbol id="h-train" viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="38" height="25" rx="3" stroke="#7FB2FF" fill="rgba(127,178,255,.16)"/><path d="M24 32v8M15 44l9-4 9 4" stroke="#7FB2FF"/><path d="M12 15h13M12 21h9" stroke="#E3AC3D"/><path d="M29 24l3 3 6-7" stroke="#E3AC3D"/></symbol>
 <symbol id="h-emerg" viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="14" width="36" height="27" rx="5" stroke="#7FB2FF" fill="rgba(127,178,255,.16)"/><path d="M18 14v-4h12v4" stroke="#7FB2FF"/><path d="M24 20v15M16.5 27.5h15" stroke="#E3AC3D" stroke-width="3.4"/></symbol>
 <symbol id="h-sust" viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 44V24" stroke="#7FB2FF"/><path d="M24 24V6M24 24L11 31M24 24l13 7" stroke="#E3AC3D"/><circle cx="24" cy="24" r="3" stroke="#7FB2FF" fill="rgba(127,178,255,.16)"/><path d="M16 44h16" stroke="#7FB2FF"/></symbol>
+<symbol id="s-ig" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="34" height="34" rx="10"/><circle cx="24" cy="24" r="8"/><circle cx="34" cy="14" r="1.7" fill="#fff" stroke="none"/></symbol>
+<symbol id="s-tt" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M30 6v22a8 8 0 11-7-7.9"/><path d="M30 6c1 5.5 5 8.5 10 9"/></symbol>
+<symbol id="s-gg" viewBox="0 0 48 48"><text x="24" y="36" text-anchor="middle" font-size="36" font-weight="800" font-family="Arial,Helvetica,sans-serif" fill="#4285F4">G</text></symbol>
 </defs></svg>
 
 <nav class="nav" aria-label="Main">
@@ -535,6 +558,7 @@ footer .big{font-size:clamp(26px,5vw,44px);margin-bottom:14px}
       <p>© 2026 Smilearc Engineering Limited. All rights reserved.</p>
       <p><a href="#careers" data-v="careers" style="color:var(--gold);font-weight:700">Careers: apply to join us →</a></p>
       <p><a href="#hse" data-v="hse" style="color:var(--gold);font-weight:700">Health, Safety &amp; Environment →</a></p>
+      <div class="fsoc"><a class="fp ig" href="https://www.instagram.com/smilearcengineeringlimited/" target="_blank" rel="noopener noreferrer" data-ext><i><svg aria-hidden="true"><use href="#s-ig"/></svg></i>Instagram</a><a class="fp tt" href="https://www.tiktok.com/@smilearch_engineeringltd" target="_blank" rel="noopener noreferrer" data-ext><i><svg aria-hidden="true"><use href="#s-tt"/></svg></i>TikTok</a><a class="fp gg" href="https://share.google/yGDyFNhu8l2Iceesd" target="_blank" rel="noopener noreferrer" data-ext><i><svg aria-hidden="true"><use href="#s-gg"/></svg></i>Google</a></div>
     </div>
   </div>
 </footer>
@@ -550,6 +574,8 @@ footer .big{font-size:clamp(26px,5vw,44px);margin-bottom:14px}
     <a class="row wa" href="https://wa.me/2348161263631" target="_blank" rel="noopener"><span class="ib sm"><svg><use href="#i-wa"/></svg></span><span><small>Chat on WhatsApp</small><b>Message us</b></span></a>
     <div class="rw"><a class="row" href="mailto:smilearcengineeringlimited@gmail.com"><span class="ib sm"><svg><use href="#i-mail"/></svg></span><span><small>Email</small><b>smilearcengineeringlimited@gmail.com</b></span></a><button class="cp" data-copy="smilearcengineeringlimited@gmail.com" aria-label="Copy">Copy</button></div>
     <div class="row st"><span class="ib sm"><svg><use href="#i-pin"/></svg></span><span><small>Office</small><b>7, Powerline Street, Meiran, Lagos State</b></span></div>
+    <p class="socl">Follow us and find us online</p>
+    <div class="sl-list"><a class="sl ig" href="https://www.instagram.com/smilearcengineeringlimited/" target="_blank" rel="noopener noreferrer" data-ext><i><svg aria-hidden="true"><use href="#s-ig"/></svg></i><span class="sl-t"><b>Instagram</b><small>@smilearcengineeringlimited</small></span><em class="sl-go">Follow →</em></a><a class="sl tt" href="https://www.tiktok.com/@smilearch_engineeringltd" target="_blank" rel="noopener noreferrer" data-ext><i><svg aria-hidden="true"><use href="#s-tt"/></svg></i><span class="sl-t"><b>TikTok</b><small>@smilearch_engineeringltd</small></span><em class="sl-go">Follow →</em></a><a class="sl gg" href="https://share.google/yGDyFNhu8l2Iceesd" target="_blank" rel="noopener noreferrer" data-ext><i><svg aria-hidden="true"><use href="#s-gg"/></svg></i><span class="sl-t"><b>Google</b><small>Find Smilearc on Google</small></span><em class="sl-go">View →</em></a></div>
 </div>
 </div>
 
@@ -635,6 +661,8 @@ function obs(){var els=$$(".rv:not(.in)");if(!("IntersectionObserver" in window)
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}
 document.addEventListener("click",function(e){var c=e.target.closest("[data-contact]");if(c){sheet(true);return}var s=e.target.closest("[data-scroll]");if(s){var t=document.getElementById(s.dataset.scroll);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})}});
 go(location.hash.slice(1));obs()})();
+
+document.addEventListener("click",function(e){var a=e.target.closest("a[data-ext]");if(!a)return;e.preventDefault();var w=null;try{w=window.open(a.href,"_blank")}catch(x){}if(w){try{w.opener=null}catch(x){}}else{try{location.href=a.href}catch(x){}}if(window.top!==window.self){var t=document.createElement("div");t.className="toast";t.textContent="Social links open on the live website or in your phone browser, not inside a preview.";document.body.appendChild(t);setTimeout(function(){t.remove()},4200)}});
 </script>
 </body>
 </html>
